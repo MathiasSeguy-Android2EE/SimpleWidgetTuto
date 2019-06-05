@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android2ee.tuto.widget.simple.sample1"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="21" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+
+         <activity
+         android:label="@string/app_name"
+         android:name=".SimpleWidgetTutoActivity" >
+         <intent-filter >
+         <action android:name="android.intent.action.MAIN" />
+
+
+         <category android:name="android.intent.category.LAUNCHER" />
+         </intent-filter>
+         </activity>
+        <!-- Broadcast Receiver that will process AppWidget updates -->
+        <receiver
+            android:name=".SimpleWidget2"
+            android:label="@string/widget_name" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.tuto.widget.simple.sample1.click1" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_properties_definition_2" />
+        </receiver>
+
+        <compatible-screens>
+
+            <!-- all small size screens -->
+            <screen
+                android:screenDensity="ldpi"
+                android:screenSize="small" />
+            <screen
+                android:screenDensity="mdpi"
+                android:screenSize="small" />
+            <screen
+                android:screenDensity="hdpi"
+                android:screenSize="small" />
+            <screen
+                android:screenDensity="xhdpi"
+                android:screenSize="small" />
+            <!-- all normal size screens -->
+            <screen
+                android:screenDensity="ldpi"
+                android:screenSize="normal" />
+            <screen
+                android:screenDensity="mdpi"
+                android:screenSize="normal" />
+            <screen
+                android:screenDensity="hdpi"
+                android:screenSize="normal" />
+            <screen
+                android:screenDensity="xhdpi"
+                android:screenSize="normal" />
+            <!-- all large size screens -->
+            <screen
+                android:screenDensity="ldpi"
+                android:screenSize="large" />
+            <screen
+                android:screenDensity="mdpi"
+                android:screenSize="large" />
+            <screen
+                android:screenDensity="hdpi"
+                android:screenSize="large" />
+            <screen
+                android:screenDensity="xhdpi"
+                android:screenSize="large" />
+            <!-- all extra-large size screens -->
+            <screen
+                android:screenDensity="ldpi"
+                android:screenSize="xlarge" />
+            <screen
+                android:screenDensity="mdpi"
+                android:screenSize="xlarge" />
+            <screen
+                android:screenDensity="hdpi"
+                android:screenSize="xlarge" />
+            <screen
+                android:screenDensity="xhdpi"
+                android:screenSize="xlarge" />
+        </compatible-screens>
+
+<uses-feature android:name="android.hardware.bluetooth" />
+<uses-feature android:name="android.hardware.camera" />
+    </application>
+
+</manifest>
